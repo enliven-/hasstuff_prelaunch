@@ -1,6 +1,6 @@
 
 jQuery(document).ready(function() {
-	
+	console.log("asdfasdfasdfasdfasdfasdfasdfasdfas")
     /*
 	    Top menu
 	*/
@@ -36,14 +36,14 @@ jQuery(document).ready(function() {
         Background slideshow
     */
     $('.coming-soon').backstretch([
-      "assets/back1.jpg"
-    , "assets/back2.jpg"
-    , "assets/back3.jpg"
+      "back1.jpg"
+    , "back2.jpg"
+    , "back3.jpg"
     ], {duration: 3000, fade: 750});
     
-    $('.about-container').backstretch("assets/back2.jpg");
+    $('.about-container').backstretch("back2.jpg");
     
-    $('.whos-behind-container').backstretch("assets/back4.jpg");
+    $('.whos-behind-container').backstretch("back4.jpg");
 
     /*
         Countdown initializer
@@ -76,33 +76,7 @@ jQuery(document).ready(function() {
     /*
 	    Show latest tweets
 	*/
-	$('.latest-tweets .tweets').tweet({
-		modpath: 'assets/twitter/',
-		username: 'anli_zaimi',
-		page: 1,
-		count: 5,
-		loading_text: 'loading ...'
-	});
-	
-	$('.latest-tweets .tweets .tweet_list li').append('<span class="tweet_nav"></span>');
-	$('.latest-tweets .tweets .tweet_list li:first .tweet_nav').css('background', '#e8643e');
-	$('.latest-tweets .tweets .tweet_list li .tweet_time').hide();
-	$('.latest-tweets .tweets .tweet_list li .tweet_text').hide();
-	$('.latest-tweets .tweet-active').html($('.latest-tweets .tweets .tweet_list li:first .tweet_text').html());
 
-	$('.latest-tweets .tweets .tweet_list li .tweet_nav').on('click', function() {
-		$('.latest-tweets .tweets .tweet_list li .tweet_nav').css('background', 'rgba(255, 255, 255, 0.6)');
-		var clicked_tweet_nav = $(this);
-    	var new_tweet_text = clicked_tweet_nav.siblings('.tweet_text').html();
-    	$('.latest-tweets .tweet-active').fadeOut(300, function() {
-    		$(this).html(new_tweet_text);
-    		$(this).fadeIn(400, function() {
-    			// reload background
-    			$('.whos-behind-container').backstretch("resize");
-    		});
-    	});
-    	clicked_tweet_nav.css('background', '#e8643e');
-    });
 
     /*
 	    Google maps
@@ -125,7 +99,7 @@ jQuery(document).ready(function() {
         var postdata = $('.subscribe form').serialize();
         $.ajax({
             type: 'POST',
-            url: 'assets/subscribe.php',
+            url: 'subscribe.php',
             data: postdata,
             dataType: 'json',
             success: function(json) {
@@ -158,7 +132,7 @@ jQuery(document).ready(function() {
 	    var postdata = $('.contact-form form').serialize();
 	    $.ajax({
 	        type: 'POST',
-	        url: 'assets/contact.php',
+	        url: 'contact.php',
 	        data: postdata,
 	        dataType: 'json',
 	        success: function(json) {

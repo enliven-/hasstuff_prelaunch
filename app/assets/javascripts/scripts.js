@@ -36,14 +36,14 @@ jQuery(document).ready(function() {
         Background slideshow
     */
     $('.coming-soon').backstretch([
-      "assets/back1.jpg"
-    , "assets/back2.jpg"
-    , "assets/back3.jpg"
+      "back1.jpg"
+    , "back2.jpg"
+    , "back3.jpg"
     ], {duration: 3000, fade: 750});
     
-    $('.about-container').backstretch("assets/back2.jpg");
+    $('.about-container').backstretch("back2.jpg");
     
-    $('.whos-behind-container').backstretch("assets/back4.jpg");
+    $('.whos-behind-container').backstretch("back4.jpg");
 
     /*
         Countdown initializer
@@ -77,7 +77,7 @@ jQuery(document).ready(function() {
 	    Show latest tweets
 	*/
 	$('.latest-tweets .tweets').tweet({
-		modpath: 'assets/twitter/',
+		modpath: 'twitter/',
 		username: 'anli_zaimi',
 		page: 1,
 		count: 5,
@@ -125,7 +125,7 @@ jQuery(document).ready(function() {
         var postdata = $('.subscribe form').serialize();
         $.ajax({
             type: 'POST',
-            url: 'assets/subscribe.php',
+            url: 'subscribe.php',
             data: postdata,
             dataType: 'json',
             success: function(json) {
@@ -158,7 +158,7 @@ jQuery(document).ready(function() {
 	    var postdata = $('.contact-form form').serialize();
 	    $.ajax({
 	        type: 'POST',
-	        url: 'assets/contact.php',
+	        url: 'contact.php',
 	        data: postdata,
 	        dataType: 'json',
 	        success: function(json) {
