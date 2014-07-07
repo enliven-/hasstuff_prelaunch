@@ -7,10 +7,13 @@ class ApplicationController < ActionController::Base
   end
 
   def subscribe
-    user = User.new(email: params[:email], name: params[:name] || 'anonymous')
-    user.save
+    user = User.create(email: params[:email], name: params[:name] || 'anonymous')
     render 'thanks'
   end
 
+  def message
+    message = ContactMessage.create(email: params[:email], subject: params[:subject] || 'anonymous', message: params[:message])
+    render 'thanks_message'
+  end
 
 end
