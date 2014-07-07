@@ -7,9 +7,10 @@ class ApplicationController < ActionController::Base
   end
 
   def subscribe
-    render text: params and return
-    # redirect_to :root
+    user = User.new(email: params[:email], name: params[:name] || 'anonymous')
+    user.save
+    render 'thanks'
   end
 
-  
+
 end
