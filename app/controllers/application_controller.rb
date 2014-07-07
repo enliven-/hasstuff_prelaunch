@@ -5,4 +5,11 @@ class ApplicationController < ActionController::Base
 
   def home
   end
+
+  def subscribe
+    render text: params and return
+    # redirect_to :root
+  end
+
+  
 end
